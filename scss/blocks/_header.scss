@@ -1,0 +1,25 @@
+.header {
+	position: fixed;
+	width: 100%;
+	
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		max-width: 1200px;
+		margin-inline: auto;
+	}
+
+	&__logo {
+		max-width: 150px;
+	}
+
+	&__links {
+		display: flex;
+	}
+
+	&__wrap {
+	}
+
+	&__close {
+	}
+}

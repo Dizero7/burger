@@ -1,0 +1,149 @@
+/* Reset and base styles  */
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #212529;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: "Alfa Slab One", serif;
+  color: #42200b;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Bebas Neue", sans-serif;
+  color: #212529;
+}
+
+p {
+  font-weight: 500;
+  color: #212529;
+  line-height: 1.75rem;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin-inline: auto;
+  margin: 5rem 1rem;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.header__logo {
+  max-width: 150px;
+}
+.header__links {
+  display: flex;
+}

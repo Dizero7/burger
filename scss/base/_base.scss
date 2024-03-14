@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	color: $text-dark;
+}
+
+h2 {
+	font-size: 3rem;
+	font-weight: 500;
+	font-family: $font-heading;
+	color: $primary-color;
+}
+
+h3 {
+	font-size: 2rem;
+	font-weight: 500;
+	font-family: $font-subheading;
+	color: $text-dark;
+}
+
+p {
+	font-weight: 500;
+	color: $text-dark;
+	line-height: 1.75rem;
+}
+
+.section-container {
+  max-width: 1200px;
+	margin-inline: auto;
+	margin: 5rem 1rem;
+}
