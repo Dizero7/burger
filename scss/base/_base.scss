@@ -5,6 +5,7 @@ html {
 
 body {
 	color: $text-dark;
+	font-family: $font-primary;
 }
 
 h2 {
@@ -12,6 +13,7 @@ h2 {
 	font-weight: 500;
 	font-family: $font-heading;
 	color: $primary-color;
+	text-shadow: 2px 2px $secondary-color;
 }
 
 h3 {
@@ -30,5 +32,5 @@ p {
 .section-container {
   max-width: 1200px;
 	margin-inline: auto;
-	margin: 5rem 1rem;
+	padding: 5rem 1rem;
 }

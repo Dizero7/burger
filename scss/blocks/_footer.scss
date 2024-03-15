@@ -1,0 +1,56 @@
+.footer {
+
+	&__logo img {
+		max-width: 150px;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin-top: 2rem;
+		gap: 2rem;
+	}
+
+	&__text {
+		color: $white;
+	}
+
+	&__links {
+		& a i {
+			color: $white;
+		}
+	}
+
+	&__address {
+	}
+
+	&__mail {
+	}
+
+	&__social {
+		justify-content: flex-end;
+		margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+		& a {
+			font-size: 1.5rem;
+			
+			& i {
+				transition: 0.4s;
+				&:hover{
+					color: $secondary-color;
+				}
+			}
+		}
+	}
+
+
+	&__copyright {
+		color: $white;
+		margin-top: 5rem;
+		text-align: center;
+	}
+}
+
+
+

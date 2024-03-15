@@ -1,1 +1,40 @@
-	
+
+.banners {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-rows: 416px;
+	gap: 1rem;
+	& h4 {
+		margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+		color: $white;
+	}
+	& h3 {
+		font-size: 2rem;
+    font-weight: 600;
+		color: $white;
+		font-family: $font-primary;
+	}
+	&__first-card {
+		padding: 1rem;
+	}
+
+	&__subtitle {
+	}
+
+	&__wrap {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: 200px;
+		gap: 1rem;
+	}
+
+	&__second-card {
+		padding: 1rem;
+	}
+
+	&__third-card {
+		padding: 1rem;
+	}
+}

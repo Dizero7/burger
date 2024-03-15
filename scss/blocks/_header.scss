@@ -7,6 +7,7 @@
 		justify-content: space-between;
 		max-width: 1200px;
 		margin-inline: auto;
+		padding: 2rem 1rem;
 	}
 
 	&__logo {
@@ -15,9 +16,22 @@
 
 	&__links {
 		display: flex;
+		gap: 2rem;
+		& li {
+			& a {
+				font-weight: 600;
+				color: $primary-color;
+				transition: 0.4s;
+				&:hover {
+					color: $tertiary-color;
+				}
+			}
+		}
 	}
 
 	&__wrap {
+		display: flex;
+		align-items: center;
 	}
 
 	&__close {

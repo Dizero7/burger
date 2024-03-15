@@ -1,0 +1,46 @@
+.hero {
+	&-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		gap: 2rem;
+		padding-top: 12rem;
+	}
+	
+	&__content {
+		
+	}
+
+	&__text {
+		max-width: 400px;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.75rem;
+    border: 2px dashed $primary-color;
+    text-align: center;
+	}
+
+	&__heading {
+		font-size: 4.5rem;
+    font-weight: 500;
+    font-family: $font-heading;
+    color: $primary-color;
+    line-height: 3.5rem;
+    text-shadow: 2px 2px $white;
+		margin-bottom: 0.5rem;
+	}
+
+	&__subheading {
+		font-size: 3rem;
+		font-weight: 500;
+    font-family: $font-heading;
+    color: $primary-color;
+    line-height: 3.5rem;
+    text-shadow: 2px 2px $white;
+	}
+
+	&__image {
+	}
+}
+.section-container {
+}
