@@ -7,11 +7,9 @@
 	<?php wp_head(); ?>
 </head>
 <body>
-	<header class="header">
+	<header class="header" id="header">
 		<nav class="header__nav"> 
-			<a class="header__logo" href="http://burger.local">
-				<img src="<?php echo esc_url(get_template_directory_uri() . '/img/logo-dark.png'); ?>" alt="" />
-			</a>
+			<?php the_custom_logo() ?>
 			<div class="header__wrap" id="header-menu">
 				<?php wp_nav_menu([
 				'theme_location' => 'header-menu',

@@ -18,21 +18,28 @@ get_header();
 	<section class="banner" id="special">
 		<div class="section-container">
 			<div class="banners">
-				<div class="banners__first-card" style="background: url('<?php echo esc_html( get_field('banner-1_image') ); ?>') center center / cover no-repeat;
-border-radius: 1rem;">
-					<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
-					<h3 class="banners__title-1"><?php echo esc_html( get_field('banner-1_heading') ); ?></h3>
-				</div>
-				<div class="banners__wrap">
-					<div class="banners__second-card" style="background: url('<?php echo esc_html( get_field('banner-2_image') ); ?>') center center / cover no-repeat;
-border-radius: 1rem;">
-						<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
-						<h3 class="banners__title-2"><?php echo wp_kses_post ( get_field('banner-2_heading') ); ?></h3>
-					</div>
-					<div class="banners__third-card" style="background: url('<?php echo esc_html( get_field('banner-3_image') ); ?>') center center / cover no-repeat;
-border-radius: 1rem;">
-						<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
-						<h3 class="banners__title-3"><?php echo esc_html( get_field('banner-3_heading') ); ?></h3>
+					<a href="#" class="banners__card">
+						<img src="<?php echo esc_html( get_field('banner-1_image') ); ?>" alt="" class="banners__image"/>
+						<div class="banners__card-content">
+							<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
+							<h3 class="banners__title"><?php echo esc_html( get_field('banner-1_heading') ); ?></h3>
+						</div>
+					</a>
+					<div class="banners__wrap">
+						<a href="#" class="banners__card">
+							<img src="<?php echo esc_html( get_field('banner-2_image') ); ?>" alt="" class="banners__image"/>
+							<div class="banners__card-content">
+								<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
+								<h3 class="banners__title"><?php echo wp_kses_post ( get_field('banner-2_heading') ); ?></h3>
+							</div>
+						</a>
+						<a href="#" class="banners__card">
+							<img src="<?php echo esc_html( get_field('banner-3_image') ); ?>" alt="" class="banners__image"/>
+							<div class="banners__card-content">
+								<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
+								<h3 class="banners__title"><?php echo esc_html( get_field('banner-3_heading') ); ?></h3>
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>

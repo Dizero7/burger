@@ -1,6 +1,7 @@
 .header {
 	position: fixed;
 	width: 100%;
+	z-index: 7;
 	
 	&__nav {
 		display: flex;
@@ -8,10 +9,6 @@
 		max-width: 1200px;
 		margin-inline: auto;
 		padding: 2rem 1rem;
-	}
-
-	&__logo {
-		max-width: 150px;
 	}
 
 	&__links {
@@ -36,4 +33,19 @@
 
 	&__close {
 	}
+
+	&-scroll:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $white;
+		z-index: -1;
+		border-bottom: 1px solid black;
+	}
+}
+
+.custom-logo-link {
+	max-width: 150px;
 }
