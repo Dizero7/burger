@@ -17,11 +17,23 @@ add_action('after_setup_theme', function () {
 
 add_filter('show_admin_bar', '__return_false');
 
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page();
+
+}
+
+//Secondary logo
 add_action('customize_register', function ($wp_customize) {
 	$wp_customize->add_setting('secondary_logo');
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'secondary_logo', array(
-			'label' => __('Secondary Logo', 'theme_name'),
-			'section' => 'title_tagline',
-			'settings' => 'secondary_logo',
+		'label' => __('Secondary Logo'),
+		'section' => 'title_tagline',
+		'settings' => 'secondary_logo',
 	)));
 });
+
+function the_secondary_logo() {
+	$secondary_logo_id = get_theme_mod('secondary_logo');
+	echo '<img src="' . esc_url($secondary_logo_id) . '" alt="">';
+}

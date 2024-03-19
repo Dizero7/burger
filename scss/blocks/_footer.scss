@@ -15,16 +15,31 @@
 		color: $white;
 	}
 
-	&__links {
-		& a i {
-			color: $white;
+	&__links a {
+		transition: 0.4s;
+		gap: 0.5rem;
+		&:hover {
+			color: $secondary-color;
+		}
+		& i {
+			font-size: 1.25rem;
+			
 		}
 	}
 
 	&__address {
+		display: flex;
+		justify-content: flex-end;
+		color: $white;
+		padding-bottom: 1rem;
+		font-weight: 500;
 	}
 
 	&__mail {
+		display: flex;
+		justify-content: flex-end;
+		color: $white;
+		font-weight: 500;
 	}
 
 	&__social {
@@ -33,10 +48,12 @@
     display: flex;
     gap: 1rem;
 		& a {
-			font-size: 1.5rem;
+			
 			
 			& i {
 				transition: 0.4s;
+				color: $white;
+				font-size: 1.5rem;
 				&:hover{
 					color: $secondary-color;
 				}

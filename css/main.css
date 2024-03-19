@@ -188,8 +188,28 @@ p {
 .footer__text {
   color: #ffffff;
 }
+.footer__links a {
+  transition: 0.4s;
+  gap: 0.5rem;
+}
+.footer__links a:hover {
+  color: #ffc135;
+}
 .footer__links a i {
+  font-size: 1.25rem;
+}
+.footer__address {
+  display: flex;
+  justify-content: flex-end;
   color: #ffffff;
+  padding-bottom: 1rem;
+  font-weight: 500;
+}
+.footer__mail {
+  display: flex;
+  justify-content: flex-end;
+  color: #ffffff;
+  font-weight: 500;
 }
 .footer__social {
   justify-content: flex-end;
@@ -197,11 +217,10 @@ p {
   display: flex;
   gap: 1rem;
 }
-.footer__social a {
-  font-size: 1.5rem;
-}
 .footer__social a i {
   transition: 0.4s;
+  color: #ffffff;
+  font-size: 1.5rem;
 }
 .footer__social a i:hover {
   color: #ffc135;

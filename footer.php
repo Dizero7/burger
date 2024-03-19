@@ -1,26 +1,41 @@
 <?php wp_footer(); 
-$facebook_link = get_field('footer_link-facebook');
+$adress_link = get_field('footer_address', 'options');
+$mail_link = get_field('footer_mail', 'options');
 ?>
-	<footer class="footer" id="contact-us" style="background: url('<?php echo esc_html( get_field('footer_background') ); ?>') center center / cover no-repeat">
+	<footer class="footer" id="contact-us" style="background: url('<?php echo esc_html( get_field('footer_background', 'options') ); ?>') center center / cover no-repeat">
 		<div class="section-container">
 			<a class="footer__logo" href="http://burger.local">
-				<img src="<?php echo esc_url(get_template_directory_uri() . '/img/logo-light.png'); ?>" alt="" />
+				<?php the_secondary_logo(); ?>
 			</a>
 			<div class="footer__content">
-				<p class="footer__text"><?php echo esc_html( get_field('footer_text') ); ?></p>
+				<p class="footer__text"><?php echo esc_html( get_field('footer_text', 'options') ); ?></p>
 				<div class="footer__links">
-					<a href="" class="footer__address"></a>
-					<a href="" class="footer__mail"></a>
+					<a href="<?php echo esc_url( $adress_link['url'] ); ?>" class="footer__address">
+						<i class="ri-map-pin-2-fill"></i>
+						<?php echo esc_html( $adress_link['title'] ); ?>
+					</a>
+					<a href="<?php echo esc_url( $mail_link['url'] ); ?>" class="footer__mail">
+						<i class="ri-mail-fill"></i>
+						<?php echo esc_html( $mail_link['title'] ); ?>
+					</a>
 					<div class="footer__social">
-						<a href="<?php echo esc_url( $facebook_link['url'] ); ?>"><i class="ri-facebook-circle-fill"></i></a>
-						<a href=""><i class="ri-instagram-fill"></i></a>
-						<a href=""><i class="ri-twitter-fill"></i></a>
-						<a href=""><i class="ri-whatsapp-fill"></i></a>
+						<a href="<?php echo esc_url( get_field('footer_link-facebook', 'options') ); ?>">
+							<i class="ri-facebook-circle-fill"></i>
+						</a>
+						<a href="<?php echo esc_url( get_field('footer_link-instagram', 'options') ); ?>">
+							<i class="ri-instagram-fill"></i>
+						</a>
+						<a href="<?php echo esc_url( get_field('footer_link-twitter', 'options') ); ?>">
+							<i class="ri-twitter-fill"></i>
+						</a>
+						<a href="<?php echo esc_url( get_field('footer_link-whatsapp', 'options') ); ?>">
+							<i class="ri-whatsapp-fill"></i>
+						</a>
 					</div>
 				</div>
 			</div>
 			<p class="footer__copyright">
-			<?php echo esc_html( get_field('footer_copyright') ); ?>
+			<?php echo esc_html( get_field('footer_copyright', 'options') ); ?>
 			</p>
 		</div>
 	</footer>
