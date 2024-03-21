@@ -34,3 +34,14 @@ p {
 	margin-inline: auto;
 	padding: 5rem 1rem;
 }
+
+.btn {
+	padding: 1rem 1.5rem;
+	font-size: 1rem;
+	color: $white;
+	background-color: $tertiary-color;
+	transition: 0.3s;
+	&:hover {
+		background-color: $primary-color;
+	}
+}

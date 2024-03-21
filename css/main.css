@@ -133,6 +133,17 @@ p {
   padding: 5rem 1rem;
 }
 
+.btn {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #df1c1c;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #42200b;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -312,6 +323,22 @@ p {
   left: 1rem;
 }
 
+.menu__subheading {
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  background-color: #ffc135;
+}
+.menu__heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.menu__text {
+  text-align: center;
+}
+
 .discover__wrap {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -322,4 +349,40 @@ p {
 }
 .discover__heading {
   margin-bottom: 1rem;
+}
+.reservation {
+  position: relative;
+}
+.reservation__subheading {
+  text-align: center;
+}
+.reservation__heading {
+  text-align: center;
+}
+.reservation__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 600px;
+  margin: 4rem auto 0;
+}
+.reservation__form input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #212529;
+  font-size: 1rem;
+  color: #212529;
+}
+.reservation__decor-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: clamp(100px, 20vw, 250px);
+  z-index: -1;
+}
+.reservation__decor-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: clamp(100px, 20vw, 250px);
+  z-index: -1;
 }
