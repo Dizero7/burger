@@ -75,12 +75,12 @@ get_header();
 			<h2 class="reservation__heading">
 				<?php echo esc_html( get_field('booking_heading') ); ?>
 			</h2>
-			<form action="" class="reservation__form">
-				<input type="text" placeholder="NAME">
-				<input type="email" placeholder="EMAIL">
-				<input type="date">
-				<input type="time">
-				<input type="number" min="1" max="10" placeholder="PEOPLE">
+			<form class="reservation__form" id="reservation_form">
+				<input name="name" type="text" placeholder="NAME" >
+				<input name="email" type="email" placeholder="EMAIL" >
+				<input name="date" type="date" >
+				<input name="time" type="time" >
+				<input name="number" type="number" min="1" max="10" placeholder="PEOPLE" >
 				<button class="btn" type="submit">FIND TABLE</button>
 			</form>
 		</div>
@@ -88,4 +88,29 @@ get_header();
 		<img class="reservation__decor-right" src="<?php echo esc_html( get_field('booking_decor-right') ); ?>" alt=""/>
 	</section>
 </main>
+<script>
+	(function($){
+	$('#reservation_form').submit( function(event){
+		event.preventDefault();
+		var endpoint = '<?php echo admin_url('admin-ajax.php')?>';
+		var form = $('#reservation_form').serialize();
+		var formdata = new FormData;
+
+		formdata.append('action', 'enquiry');
+		formdata.append('enquiry', form);
+
+		$.ajax(endpoint, {
+
+			type: 'POST',
+			data: formdata,
+			processData: false,
+			contentType: false,
+
+			success: function(res){
+				alert(res.data);
+			}
+		})
+	})
+	})(jQuery)
+</script>
 <?php get_footer(); ?>
