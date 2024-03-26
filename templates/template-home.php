@@ -88,29 +88,4 @@ get_header();
 		<img class="reservation__decor-right" src="<?php echo esc_html( get_field('booking_decor-right') ); ?>" alt=""/>
 	</section>
 </main>
-<script>
-	(function($){
-	$('#reservation_form').submit( function(event){
-		event.preventDefault();
-		var endpoint = '<?php echo admin_url('admin-ajax.php')?>';
-		var form = $('#reservation_form').serialize();
-		var formdata = new FormData;
-
-		formdata.append('action', 'enquiry');
-		formdata.append('enquiry', form);
-
-		$.ajax(endpoint, {
-
-			type: 'POST',
-			data: formdata,
-			processData: false,
-			contentType: false,
-
-			success: function(res){
-				alert(res.data);
-			}
-		})
-	})
-	})(jQuery)
-</script>
 <?php get_footer(); ?>

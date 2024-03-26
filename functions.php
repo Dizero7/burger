@@ -5,6 +5,7 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_style('main-css', get_template_directory_uri() . '/css/main.css');
 	wp_enqueue_style('icon-library', 'https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css');
 	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true);
+	wp_localize_script('main-js', 'admin_ajax_php', ['ajax_url' => admin_url('admin-ajax.php')]);
 });
 
 add_action('after_setup_theme', function () {
@@ -39,7 +40,19 @@ function the_secondary_logo() {
 
 
 
-// //Submit reservation form
+//Bookings
+add_action('init', function(){
+	register_post_type('apps', [
+		'labels' => [
+			'name'               => 'Bookings',
+			'singular_name'      => 'Booking'
+		],
+		'public' => false,
+		'show_ui' => true,
+		'supports' => ['title']
+	]);
+});
+
 
 add_action('wp_ajax_enquiry', 'submit_form');
 add_action('wp_ajax_nopriv_enquiry', 'submit_form');
