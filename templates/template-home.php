@@ -75,13 +75,14 @@ get_header();
 			<h2 class="reservation__heading">
 				<?php echo esc_html( get_field('booking_heading') ); ?>
 			</h2>
-			<form class="reservation__form" id="reservation_form">
-				<input name="name" type="text" placeholder="NAME" >
-				<input name="email" type="email" placeholder="EMAIL" >
-				<input name="date" type="date" >
-				<input name="time" type="time" >
-				<input name="number" type="number" min="1" max="10" placeholder="PEOPLE" >
+			<form class="reservation__form">
+				<input name="name" type="text" placeholder="NAME" required>
+				<input name="email" type="email" placeholder="EMAIL" required>
+				<input name="date" type="date" required>
+				<input name="time" type="time" required>
+				<input name="number" type="number" min="1" max="10" placeholder="PEOPLE" required>
 				<button class="btn" type="submit">FIND TABLE</button>
+				<p class="reservation__message"></p>
 			</form>
 		</div>
 		<img class="reservation__decor-left" src="<?php echo esc_html( get_field('booking_decor-left') ); ?>" alt=""/>

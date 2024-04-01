@@ -9,25 +9,18 @@
 
 	//Bookings
 	(function($){
-		$('#reservation_form').submit( function(event){
-			event.preventDefault();
-			var endpoint = admin_ajax_php.ajax_url;
-			var form = $('#reservation_form').serialize();
-			var formdata = new FormData;
-	
-			formdata.append('action', 'enquiry');
-			formdata.append('enquiry', form);
-	
-			$.ajax(endpoint, {
-	
-				type: 'POST',
-				data: formdata,
-				processData: false,
-				contentType: false,
-	
-				success: function(res){
-					alert(res.data);
+		$('.reservation__form').submit( function(event){
+			event.preventDefault();	
+			var $form = $(this);
+			var data = $form.serialize(); 
+
+			$.post(window.admin_ajax_php.ajax_url + '?action=bookings', data, function(data){
+				if(data.res){
+					$form.find('.reservation__message').html('Thank you, your table has been booked.');
 				}
-			})
-		})
+				else{
+					$form.find('.reservation__message').html(data.error);
+				}
+			},'json');
+		});
 		})(jQuery)
