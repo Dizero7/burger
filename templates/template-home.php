@@ -54,6 +54,35 @@ get_header();
 		<p class="menu__text">
 			<?php echo esc_html( get_field('menu_text') ); ?>
 		</p>
+		<?php
+		$terms = get_terms('meat_type');
+		foreach( $terms as $term ){
+		?>
+		
+		<li data-filter="<?= $term->slug; ?>"><?= $term->name ?></li>
+
+
+		<?php
+		}
+		?>
+
+		<?php $args = [
+			'post_type' => 'burgers',
+			'posts_per_page' => 3,
+			'order' => 'ASC'
+		];
+
+		$burgers = get_posts($args);
+
+		foreach ($burgers as $burger) :
+		$burger_image = get_field('burger_image', $burger->ID);
+		$burger_heading = get_field('burger_heading', $burger->ID);
+		$burger_text = get_field('burger_text', $burger->ID);
+		?>
+		<img src="<?= esc_html(get_field('burger_image', $burger->ID));?>" alt="">
+		<?= esc_html(get_field('burger_heading', $burger->ID));?>
+		<?= esc_html(get_field('burger_text', $burger->ID));?>
+		<?php endforeach; ?>
 	</section>
 	<section class="discover" id="events">
 		<div class="section-container">

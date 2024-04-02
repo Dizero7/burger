@@ -86,3 +86,27 @@ function submit_form(){
 	wp_die();
 
 }
+
+
+
+
+//Burgers
+add_action('init', function(){
+	register_post_type('burgers', [
+		'labels' => [
+			'name'               => 'Burgers',
+			'singular_name'      => 'Burger'
+		],
+		'public' => false,
+		'show_ui' => true,
+		'supports' => [ 'title'],
+	]);
+});
+
+add_action('init', function(){
+	register_taxonomy( 'meat_type', 'burgers', [
+		'labels' => [
+			'name' => 'Meat type'
+		]
+	]);
+});
