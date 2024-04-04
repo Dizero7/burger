@@ -338,6 +338,37 @@ p {
 .menu__text {
   text-align: center;
 }
+.menu__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.burger {
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.burger:hover {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+.burger__image {
+  max-height: 200px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(10px 10px 30px rgba(0, 0, 0, 0.3));
+}
+.burger__heading {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+.burger__text {
+  margin-bottom: 2rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+}
 
 .discover__wrap {
   display: grid;

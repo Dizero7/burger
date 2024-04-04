@@ -1,5 +1,4 @@
 .menu {
-
 	&__subheading {
 		max-width: fit-content;
     margin-inline: auto;
@@ -16,8 +15,38 @@
 
 	&__text {
 		text-align: center;
+	}
 
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
 	}
 }
-.section-container {
+.burger {
+	padding: 2rem 1rem;
+	border-radius: 1rem;
+	text-align: center;
+	&:hover{
+		box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+	}
+	&__image {
+		max-height: 200px;
+		margin-inline: auto;
+		margin-bottom: 2rem;
+		filter: drop-shadow(10px 10px 30px rgba(0, 0, 0, 0.3));
+	}
+
+	&__heading {
+		margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+		font-family: $font-primary;
+	}
+
+	&__text {
+		margin-bottom: 2rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+	}
 }
