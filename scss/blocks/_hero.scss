@@ -6,10 +6,16 @@
 		gap: 2rem;
 		padding-top: 11rem;
 		padding-bottom: 8rem;
+		@include mediaTablet {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 	
 	&__content {
-		
+		@include mediaTablet {
+			text-align: center;
+			order: 2;
+		}
 	}
 
 	&__text {
@@ -19,6 +25,9 @@
     font-size: 1.75rem;
     border: 2px dashed $primary-color;
     text-align: center;
+		@include mediaTablet {
+			margin-inline: auto;
+		}
 	}
 
 	&__heading {

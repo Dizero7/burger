@@ -15,12 +15,47 @@
 
 	&__text {
 		text-align: center;
+		margin-bottom: 1.5rem;
+	}
+
+	&__filters {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		margin-bottom: 1rem;
+	}
+	&__filter {
+		&-checkbox {
+			display: none;
+			&:checked + .menu__filter-icon {
+				outline: solid 3px black;
+			}
+		}
+		&-icon {
+			border-radius: 17px;
+			transition: box-shadow 0.3s;
+			&:hover {
+				box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+			}
+		}
+		&-icon img {
+			padding: 0.5rem;
+			max-width: 4rem;
+			border-radius: 17px;
+			
+		}
 	}
 
 	&__items {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
+		@include mediaTablet {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include mediaMobile {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 }
 .burger {

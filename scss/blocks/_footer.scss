@@ -2,6 +2,9 @@
 
 	&__logo img {
 		max-width: 150px;
+		@include mediaTablet {
+			margin-inline: auto;
+		}
 	}
 
 	&__content {
@@ -9,10 +12,17 @@
 		grid-template-columns: repeat(2, 1fr);
 		margin-top: 2rem;
 		gap: 2rem;
+		@include mediaTablet {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 
 	&__text {
 		color: $white;
+		@include mediaTablet {
+			text-align: center;
+			margin-inline: 5rem;
+		}
 	}
 
 	&__links a {
@@ -33,6 +43,9 @@
 		color: $white;
 		padding-bottom: 1rem;
 		font-weight: 500;
+		@include mediaTablet {
+			justify-content: center;
+		}
 	}
 
 	&__mail {
@@ -40,6 +53,9 @@
 		justify-content: flex-end;
 		color: $white;
 		font-weight: 500;
+		@include mediaTablet {
+			justify-content: center;
+		}
 	}
 
 	&__social {
@@ -47,6 +63,9 @@
 		margin-top: 2rem;
     display: flex;
     gap: 1rem;
+		@include mediaTablet {
+			justify-content: center;
+		}
 		& a {
 			
 			

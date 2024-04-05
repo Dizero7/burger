@@ -25,22 +25,20 @@ get_header();
 						<h3 class="banners__title"><?php echo esc_html( get_field('banner-1_heading') ); ?></h3>
 					</div>
 				</a>
-				<div class="banners__wrap">
-					<a href="#" class="banners__card">
-						<img src="<?php echo esc_html( get_field('banner-2_image') ); ?>" alt="" class="banners__image"/>
-						<div class="banners__card-content">
-							<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
-							<h3 class="banners__title"><?php echo wp_kses_post ( get_field('banner-2_heading') ); ?></h3>
-						</div>
-					</a>
-					<a href="#" class="banners__card">
-						<img src="<?php echo esc_html( get_field('banner-3_image') ); ?>" alt="" class="banners__image"/>
-						<div class="banners__card-content">
-							<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
-							<h3 class="banners__title"><?php echo esc_html( get_field('banner-3_heading') ); ?></h3>
-						</div>
-					</a>
-				</div>
+				<a href="#" class="banners__card">
+					<img src="<?php echo esc_html( get_field('banner-2_image') ); ?>" alt="" class="banners__image"/>
+					<div class="banners__card-content">
+						<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
+						<h3 class="banners__title"><?php echo wp_kses_post ( get_field('banner-2_heading') ); ?></h3>
+					</div>
+				</a>
+				<a href="#" class="banners__card">
+					<img src="<?php echo esc_html( get_field('banner-3_image') ); ?>" alt="" class="banners__image"/>
+					<div class="banners__card-content">
+						<h4 class="banners__subtitle"><?php echo esc_html( get_field('banner_subheading') ); ?></h4>
+						<h3 class="banners__title"><?php echo esc_html( get_field('banner-3_heading') ); ?></h3>
+					</div>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -54,10 +52,25 @@ get_header();
 		<p class="menu__text">
 			<?php echo esc_html( get_field('menu_text') ); ?>
 		</p>
-		<div class="category-filters">
-			<label><input type="checkbox" class="category-checkbox" value="beef"><span>Beef</span></label>
-			<label><input type="checkbox" class="category-checkbox" value="chicken"><span>Chicken</span></label>
-			<label><input type="checkbox" class="category-checkbox" value="bacon"><span>Bacon</span></label>
+		<div class="menu__filters">
+			<label class="menu__filter">
+				<input type="checkbox" class="menu__filter-checkbox" value="beef">
+				<div class="menu__filter-icon">
+					<img src="<?= esc_html(get_field('menu_icon-beef')); ?>" alt=""/>
+				</div>
+			</label>
+			<label class="menu__filter">
+				<input type="checkbox" class="menu__filter-checkbox" value="chicken">
+				<div class="menu__filter-icon">
+					<img src="<?= esc_html(get_field('menu_icon-chicken')); ?>" alt=""/>
+				</div>
+			</label>
+			<label class="menu__filter">
+				<input type="checkbox" class="menu__filter-checkbox" value="bacon">
+				<div class="menu__filter-icon">
+					<img src="<?= esc_html(get_field('menu_icon-bacon')); ?>" alt=""/>
+				</div>
+			</label>
 		</div>
 		<div class="menu__items">
 				

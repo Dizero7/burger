@@ -27,10 +27,10 @@ window.addEventListener('scroll', bgHeader);
 
 //Menu
 jQuery(document).ready(function($) {
-	$('.category-checkbox').prop('checked', true);
+	$('.menu__filter-checkbox').prop('checked', true);
 	function updatePosts() {
 		var categories = [];
-		$('.category-checkbox:checked').each(function() {
+		$('.menu__filter-checkbox:checked').each(function() {
 			categories.push($(this).val());
 		});
 
@@ -49,9 +49,7 @@ jQuery(document).ready(function($) {
 
 	updatePosts();
 
-	$('.category-checkbox').on('change', function() {
+	$('.menu__filter-checkbox').on('change', function() {
 		updatePosts();
 	});
 });
-
-	
