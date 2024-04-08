@@ -50,12 +50,19 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
+		margin-bottom: 1rem;
 		@include mediaTablet {
 			grid-template-columns: repeat(2, 1fr);
 		}
 		@include mediaMobile {
 			grid-template-columns: repeat(1, 1fr);
 		}
+	}
+
+	&__show-more-btn {
+
+		display: block;
+		margin-inline: auto;
 	}
 }
 .burger {

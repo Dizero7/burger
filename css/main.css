@@ -155,10 +155,24 @@ p {
   max-width: 1200px;
   margin-inline: auto;
   padding: 2rem 1rem;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .header__nav {
+    padding: 1rem;
+  }
 }
 .header__links {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
+  padding-left: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .header__links {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 .header__links li a {
   font-weight: 600;
@@ -172,6 +186,21 @@ p {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 767px) {
+  .header__wrap {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    padding-block: 4rem;
+    transition: top 0.4s;
+    background-color: white;
+    justify-content: center;
+  }
+}
+.header__wrap.open {
+  top: 0;
+}
 .header-scroll:after {
   content: "";
   position: absolute;
@@ -181,6 +210,29 @@ p {
   background-color: #ffffff;
   z-index: -1;
   border-bottom: 1px solid black;
+}
+.header__toggle {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .header__toggle {
+    display: flex;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+}
+.header__close {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .header__close {
+    display: flex;
+    font-size: 1.25rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+  }
 }
 
 .custom-logo-link {
@@ -437,6 +489,7 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  margin-bottom: 1rem;
 }
 @media screen and (max-width: 767px) {
   .menu__items {
@@ -447,6 +500,10 @@ p {
   .menu__items {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+.menu__show-more-btn {
+  display: block;
+  margin-inline: auto;
 }
 
 .burger {
@@ -507,6 +564,12 @@ p {
   gap: 1rem;
   max-width: 600px;
   margin: 4rem auto 0;
+}
+@media screen and (max-width: 575px) {
+  .reservation__form {
+    grid-template-columns: none;
+    padding-inline: 3rem;
+  }
 }
 .reservation__form input {
   padding: 0.75rem 1rem;

@@ -9,11 +9,21 @@
 		max-width: 1200px;
 		margin-inline: auto;
 		padding: 2rem 1rem;
+		align-items: center;
+		@include mediaTablet {
+			padding: 1rem;
+		}
 	}
 
 	&__links {
 		display: flex;
 		gap: 2rem;
+		flex-wrap: wrap;
+		padding-left: 2rem;
+		@include mediaTablet {
+			flex-direction: column;
+			text-align: center;
+		}
 		& li {
 			& a {
 				font-weight: 600;
@@ -29,9 +39,19 @@
 	&__wrap {
 		display: flex;
 		align-items: center;
-	}
-
-	&__close {
+		@include mediaTablet{
+			position: fixed;
+			top: -100%;
+			left: 0;
+			width: 100%;
+			padding-block: 4rem;
+			transition: top 0.4s;
+			background-color: white;
+			justify-content: center;
+		}
+		&.open{
+			top: 0;
+		}
 	}
 
 	&-scroll:after{
@@ -43,6 +63,27 @@
 		background-color: $white;
 		z-index: -1;
 		border-bottom: 1px solid black;
+	}
+
+	&__toggle{
+		display: none;
+		@include mediaTablet{
+			display: flex;
+			font-size: 1.25rem;
+			cursor: pointer;
+		}
+	}
+
+	&__close{
+		display: none;
+		@include mediaTablet{
+			display: flex;
+			font-size: 1.25rem;
+			cursor: pointer;
+			position: absolute;
+			top: 1.5rem;
+			right: 1rem;
+		}
 	}
 }
 

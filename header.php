@@ -15,6 +15,12 @@
 				'theme_location' => 'header-menu',
 				'menu_class' => 'header__links',
 				]); ?>
+				<div class="header__close" id="header-close">
+					<i class="ri-close-line"></i>
+				</div>
+			</div>
+			<div class="header__toggle" id="header-toggle">
+				<i class="ri-menu-fill"></i>
 			</div>
 		</nav>
 	</header>

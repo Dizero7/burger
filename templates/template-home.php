@@ -75,6 +75,8 @@ get_header();
 		<div class="menu__items">
 				
 		</div>
+		<button class="menu__show-more-btn btn" data-page-number="2">SHOW MORE</button>
+
 
 	</section>
 	<section class="discover" id="events">
