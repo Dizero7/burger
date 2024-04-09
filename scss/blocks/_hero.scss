@@ -8,6 +8,8 @@
 		padding-bottom: 8rem;
 		@include mediaTablet {
 			grid-template-columns: repeat(1, 1fr);
+			padding-top: 5rem;
+			padding-bottom: 3rem;
 		}
 	}
 	
@@ -48,9 +50,4 @@
     line-height: 3.5rem;
     text-shadow: 2px 2px $white;
 	}
-
-	&__image {
-	}
-}
-.section-container {
 }

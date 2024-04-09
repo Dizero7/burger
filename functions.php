@@ -127,24 +127,29 @@ function filter_posts() {
 			'offset' => $offset,
 			'order' => 'ASC',
 			'tax_query' => array(
-					array(
-							'taxonomy' => 'meat_type',
-							'field' => 'slug',
-							'terms' => $categories,
-							'operator' => 'IN'
-					),
+				array(
+					'taxonomy' => 'meat_type',
+					'field' => 'slug',
+					'terms' => $categories,
+					'operator' => 'IN'
+				),
 			),
 	);
+	
 	$burger = new WP_Query($args);
+
 	if($burger->have_posts()) :
 			while($burger->have_posts()) : $burger->the_post();
-					?>
-					<div class="burger">
-							<img class="burger__image" src="<?= esc_html(get_field('burger_image', $burger -> ID)); ?>" alt=""/>
-							<h3 class="burger__heading"><?= esc_html(get_field('burger_heading', $burger->ID));?></h3>
-							<p class="burger__text"><?= esc_html(get_field('burger_text', $burger->ID));?></p>
+				?>
+				<div class="burger">
+					<img class="burger__image" src="<?= esc_html(get_field('burger_image', $burger -> ID)); ?>" alt=""/>
+					<div>
+						<h3 class="burger__heading"><?= esc_html(get_field('burger_heading', $burger->ID));?></h3>
+						<p class="burger__text"><?= esc_html(get_field('burger_text', $burger->ID));?></p>
+						<button class="btn">ORDER NOW</button>
 					</div>
-					<?php
+				</div>
+				<?php
 			endwhile;
 			wp_reset_postdata();
 	else :

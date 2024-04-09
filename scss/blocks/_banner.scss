@@ -12,12 +12,18 @@
     font-size: 1.5rem;
     font-weight: 500;
 		color: $white;
+		@include mediaTablet {
+			font-size: 1.2rem;
+		}
 	}
 	& h3 {
 		font-size: 2rem;
     font-weight: 600;
 		color: $white;
 		font-family: $font-primary;
+		@include mediaTablet {
+			font-size: 1.7rem;
+		}
 	}
 	
 	&__card {
@@ -37,12 +43,6 @@
 			@include mediaMobile {
 				grid-area: 1 / 1 / 1 / 1;
 			}
-		}
-		&:nth-child(2){
-
-		}
-		&:nth-child(3){
-
 		}
 	}
 

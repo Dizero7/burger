@@ -113,12 +113,22 @@ h2 {
   color: #42200b;
   text-shadow: 2px 2px #ffc135;
 }
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 2.3rem;
+  }
+}
 
 h3 {
   font-size: 2rem;
   font-weight: 500;
   font-family: "Bebas Neue", sans-serif;
   color: #212529;
+}
+@media screen and (max-width: 767px) {
+  h3 {
+    font-size: 1.7rem;
+  }
 }
 
 p {
@@ -131,6 +141,11 @@ p {
   max-width: 1200px;
   margin-inline: auto;
   padding: 5rem 1rem;
+}
+@media screen and (max-width: 767px) {
+  .section-container {
+    padding: 3rem 1rem;
+  }
 }
 
 .btn {
@@ -196,6 +211,7 @@ p {
     transition: top 0.4s;
     background-color: white;
     justify-content: center;
+    border-bottom: 1px solid black;
   }
 }
 .header__wrap.open {
@@ -267,6 +283,11 @@ p {
     margin-inline: 5rem;
   }
 }
+@media screen and (max-width: 575px) {
+  .footer__text {
+    margin-inline: 3rem;
+  }
+}
 .footer__links a {
   transition: 0.4s;
   gap: 0.5rem;
@@ -324,6 +345,11 @@ p {
   margin-top: 5rem;
   text-align: center;
 }
+@media screen and (max-width: 767px) {
+  .footer__copyright {
+    margin-top: 3rem;
+  }
+}
 
 .hero-container {
   display: grid;
@@ -336,6 +362,8 @@ p {
 @media screen and (max-width: 767px) {
   .hero-container {
     grid-template-columns: repeat(1, 1fr);
+    padding-top: 5rem;
+    padding-bottom: 3rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -374,6 +402,7 @@ p {
   line-height: 3.5rem;
   text-shadow: 2px 2px #ffffff;
 }
+
 .banners {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -391,11 +420,21 @@ p {
   font-weight: 500;
   color: #ffffff;
 }
+@media screen and (max-width: 767px) {
+  .banners h4 {
+    font-size: 1.2rem;
+  }
+}
 .banners h3 {
   font-size: 2rem;
   font-weight: 600;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
+}
+@media screen and (max-width: 767px) {
+  .banners h3 {
+    font-size: 1.7rem;
+  }
 }
 .banners__card {
   overflow: hidden;
@@ -502,6 +541,7 @@ p {
   }
 }
 .menu__show-more-btn {
+  background-color: #ffc135;
   display: block;
   margin-inline: auto;
 }
@@ -510,6 +550,14 @@ p {
   padding: 2rem 1rem;
   border-radius: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .burger {
+    padding: 1rem 0;
+  }
 }
 .burger:hover {
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
@@ -567,8 +615,9 @@ p {
 }
 @media screen and (max-width: 575px) {
   .reservation__form {
-    grid-template-columns: none;
+    grid-template-columns: 1fr;
     padding-inline: 3rem;
+    margin: 1rem auto 0;
   }
 }
 .reservation__form input {
@@ -576,6 +625,15 @@ p {
   border: 1px solid #212529;
   font-size: 1rem;
   color: #212529;
+}
+.reservation__message {
+  grid-column: span 2;
+  text-align: center;
+}
+@media screen and (max-width: 575px) {
+  .reservation__message {
+    grid-column: 1;
+  }
 }
 .reservation__decor-left {
   position: absolute;

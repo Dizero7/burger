@@ -60,7 +60,7 @@
 	}
 
 	&__show-more-btn {
-
+		background-color: $secondary-color;
 		display: block;
 		margin-inline: auto;
 	}
@@ -69,6 +69,12 @@
 	padding: 2rem 1rem;
 	border-radius: 1rem;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	@include mediaTablet {
+		padding: 1rem 0;
+	}
 	&:hover{
 		box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 	}

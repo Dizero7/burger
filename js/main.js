@@ -35,17 +35,17 @@ jQuery(document).ready(function($) {
 		});
 
 		$.ajax({
-				url: admin_ajax_php.ajax_url,
-				type: 'post',
-				data: {
-					action: 'filter_posts',
-					categories: categories,
-					page: 1
-				},
-				success: function(response) {
-					$('.menu__items').html(response);
-					$('.menu__show-more-btn').data('page-number', 2);
-				}
+			url: admin_ajax_php.ajax_url,
+			type: 'post',
+			data: {
+				action: 'filter_posts',
+				categories: categories,
+				page: 1
+			},
+			success: function(response) {
+				$('.menu__items').html(response);
+				$('.menu__show-more-btn').data('page-number', 2);
+			}
 		});
 	}
 
@@ -56,43 +56,43 @@ jQuery(document).ready(function($) {
 	});
 
 	$(document).on('click', '.menu__show-more-btn', function() {
-			var pageNumber = $(this).data('page-number');
-			var categories = [];
-			$('.menu__filter-checkbox:checked').each(function() {
-					categories.push($(this).val());
-			});
+		var pageNumber = $(this).data('page-number');
+		var categories = [];
+		$('.menu__filter-checkbox:checked').each(function() {
+				categories.push($(this).val());
+		});
 
-			$.ajax({
-					url: admin_ajax_php.ajax_url,
-					type: 'post',
-					data: {
-							action: 'filter_posts',
-							categories: categories,
-							page: pageNumber
-					},
-					success: function(response) {
-							$('.menu__items').append(response);
-							pageNumber++;
-							$('.menu__show-more-btn').data('page-number', pageNumber);
-					}
-			});
+		$.ajax({
+			url: admin_ajax_php.ajax_url,
+			type: 'post',
+			data: {
+				action: 'filter_posts',
+				categories: categories,
+				page: pageNumber
+			},
+			success: function(response) {
+				$('.menu__items').append(response);
+				pageNumber++;
+				$('.menu__show-more-btn').data('page-number', pageNumber);
+			}
+		});
 	});
 });
 
-	//Header navigation adaptive
-	const headerMenu = document.getElementById('header-menu'),
-	headerToggle = document.getElementById('header-toggle'),
-	headerClose = document.getElementById('header-close')
+//Header navigation adaptive
+const headerMenu = document.getElementById('header-menu'),
+headerToggle = document.getElementById('header-toggle'),
+headerClose = document.getElementById('header-close')
 
-	if(headerToggle){
-		headerToggle.addEventListener('click', () =>{
-			headerMenu.classList.add('open')
-		})
-	}
+if(headerToggle){
+	headerToggle.addEventListener('click', () =>{
+		headerMenu.classList.add('open')
+	})
+}
 
-	if(headerClose){
-		headerClose.addEventListener('click', () =>{
-			headerMenu.classList.remove('open')
-		})
-	}
+if(headerClose){
+	headerClose.addEventListener('click', () =>{
+		headerMenu.classList.remove('open')
+	})
+}
 
