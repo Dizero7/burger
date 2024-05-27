@@ -28,11 +28,13 @@ window.addEventListener('scroll', bgHeader);
 //Menu
 jQuery(document).ready(function($) {
 	$('.menu__filter-checkbox').prop('checked', true);
-	function updatePosts() {
+
+	function updatePosts(page = 1) {
 		var categories = [];
 		$('.menu__filter-checkbox:checked').each(function() {
 			categories.push($(this).val());
 		});
+		var postsPerPage = $(window).width() < 767 ? 2 : 3;
 
 		$.ajax({
 			url: admin_ajax_php.ajax_url,
@@ -40,11 +42,17 @@ jQuery(document).ready(function($) {
 			data: {
 				action: 'filter_posts',
 				categories: categories,
-				page: 1
+				page: page, 
+				posts_per_page: postsPerPage
 			},
 			success: function(response) {
-				$('.menu__items').html(response);
-				$('.menu__show-more-btn').data('page-number', 2);
+				if (page === 1) {
+					$('.menu__items').html(response);
+					$('.menu__show-more-btn').data('page-number', 2);
+				} else {
+					$('.menu__items').append(response);
+					$('.menu__show-more-btn').data('page-number', page + 1);
+				}
 			}
 		});
 	}
@@ -52,30 +60,12 @@ jQuery(document).ready(function($) {
 	updatePosts();
 
 	$('.menu__filter-checkbox').on('change', function() {
-			updatePosts();
+		updatePosts();
 	});
 
 	$(document).on('click', '.menu__show-more-btn', function() {
 		var pageNumber = $(this).data('page-number');
-		var categories = [];
-		$('.menu__filter-checkbox:checked').each(function() {
-				categories.push($(this).val());
-		});
-
-		$.ajax({
-			url: admin_ajax_php.ajax_url,
-			type: 'post',
-			data: {
-				action: 'filter_posts',
-				categories: categories,
-				page: pageNumber
-			},
-			success: function(response) {
-				$('.menu__items').append(response);
-				pageNumber++;
-				$('.menu__show-more-btn').data('page-number', pageNumber);
-			}
-		});
+		updatePosts(pageNumber);
 	});
 });
 

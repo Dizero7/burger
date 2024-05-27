@@ -51,6 +51,11 @@ p {
 	background-color: $tertiary-color;
 	transition: 0.3s;
 	&:hover {
+		@include mediaDesktop {
+			background-color: $primary-color;
+		}
+	}
+	&:active {
 		background-color: $primary-color;
 	}
 }

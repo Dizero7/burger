@@ -117,43 +117,53 @@ add_action('wp_ajax_nopriv_filter_posts', 'filter_posts');
 function filter_posts() {
 	$categories = $_POST['categories'];
 	$page = $_POST['page'];
-	$posts_per_page = 3;
+	$posts_per_page = $_POST['posts_per_page'];;
 	$offset = ($page - 1) * $posts_per_page;
+	if ( $categories === null) {
+		echo '<style>.menu__show-more-btn { display: none; }</style>';
+		echo '<p class="burger__warning">No burgers found :(</p>';
+	}
 
 	$args = array(
-			'post_type' => 'burgers',
-			'posts_per_page' => $posts_per_page,
-			'paged' => $page,
-			'offset' => $offset,
-			'order' => 'ASC',
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'meat_type',
-					'field' => 'slug',
-					'terms' => $categories,
-					'operator' => 'IN'
-				),
+		'post_type' => 'burgers',
+		'posts_per_page' => $posts_per_page,
+		'paged' => $page,
+		'offset' => $offset,
+		'order' => 'ASC',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'meat_type',
+				'field' => 'slug',
+				'terms' => $categories,
+				'operator' => 'IN'
 			),
+		),
 	);
-	
-	$burger = new WP_Query($args);
 
-	if($burger->have_posts()) :
-			while($burger->have_posts()) : $burger->the_post();
-				?>
+	$burger = new WP_Query($args);
+	$total_burgers = $burger->found_posts;
+
+	if ($burger->have_posts()) :
+		while ($burger->have_posts()) : $burger->the_post();
+			?>
 				<div class="burger">
-					<img class="burger__image" src="<?= esc_html(get_field('burger_image', $burger -> ID)); ?>" alt=""/>
+					<img class="burger__image" src="<?= esc_html(get_field('burger_image', $burger->ID)); ?>" alt=""/>
 					<div>
-						<h3 class="burger__heading"><?= esc_html(get_field('burger_heading', $burger->ID));?></h3>
-						<p class="burger__text"><?= esc_html(get_field('burger_text', $burger->ID));?></p>
+						<h3 class="burger__heading"><?= esc_html(get_field('burger_heading', $burger->ID)); ?></h3>
+						<p class="burger__text"><?= esc_html(get_field('burger_text', $burger->ID)); ?></p>
 						<button class="btn">ORDER NOW</button>
 					</div>
 				</div>
-				<?php
-			endwhile;
-			wp_reset_postdata();
-	else :
-			echo 'No burgers found :(';
+			<?php
+		endwhile;
+		
+		wp_reset_postdata();
+
+		if ( $total_burgers === 0  || $total_burgers <= $offset + $posts_per_page) {
+			echo '<style>.menu__show-more-btn { display: none; }</style>';
+		}
+		
 	endif;
 	die();
 }
+?>

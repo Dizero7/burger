@@ -102,8 +102,8 @@ get_header();
 			<form class="reservation__form">
 				<input name="name" type="text" placeholder="NAME" required>
 				<input name="email" type="email" placeholder="EMAIL" required>
-				<input name="date" type="date" required>
-				<input name="time" type="time" required>
+				<div><input name="date" type="date" required><i class="ri-calendar-schedule-line"></i></div>
+				<div><input name="time" type="time" required><i class="ri-time-line"></i></div>
 				<input name="number" type="number" min="1" max="10" placeholder="PEOPLE" required>
 				<button class="btn" type="submit">FIND TABLE</button>
 				<p class="reservation__message"></p>

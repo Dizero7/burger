@@ -15,6 +15,12 @@
 		@include mediaTablet {
 			font-size: 1.2rem;
 		}
+		text-shadow: 
+		-0.5px -0.5px 0 #000,
+		0.5px -0.5px 0 #000,
+		-0.5px  0.5px 0 #000,
+		0.5px  0.5px 0 #000;
+
 	}
 	& h3 {
 		font-size: 2rem;
@@ -24,6 +30,11 @@
 		@include mediaTablet {
 			font-size: 1.7rem;
 		}
+		text-shadow: 
+		-0.5px -0.5px 0 #000,
+		0.5px -0.5px 0 #000,
+		-0.5px  0.5px 0 #000,
+		0.5px  0.5px 0 #000;
 	}
 	
 	&__card {
